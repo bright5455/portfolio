@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --color-black: #0b0b0b;
+  --color-charcoal: #151515;
+  --color-charcoal-2: #1c1c1c;
+  --color-gold: #d4af37;
+  --color-gold-light: #ffd700;
+  --color-gray: #a3a3a3;
+  --color-white: #f5f5f5;
+}
+
+@theme inline {
+  --color-black: var(--color-black);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-2: var(--color-charcoal-2);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gray: var(--color-gray);
+  --color-off-white: var(--color-white);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #0b0b0b;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-gold), #8a6d1f);
+  border-radius: 8px;
+}
+
+.font-heading {
+  font-family: var(--font-playfair), serif;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(90deg, #d4af37 0%, #ffd700 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 0 3rem;
+  }
+}
+
+.glass {
+  background: rgba(21, 21, 21, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 1rem;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0) 40%, rgba(212, 175, 55, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

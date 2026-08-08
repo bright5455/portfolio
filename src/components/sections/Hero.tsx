@@ -136,15 +136,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative mx-auto flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80 lg:h-96 lg:w-96"
         >
-          <div className="absolute inset-0 animate-float rounded-full bg-gradient-to-br from-gold/30 via-transparent to-gold-light/20 blur-2xl" />
-          <div className="relative h-full w-full animate-float rounded-full border-2 border-gold/40 p-2 gold-glow">
+          <div className="absolute -inset-6 -z-10 animate-float rounded-full bg-gradient-to-br from-gold/25 via-transparent to-gold-light/15 blur-2xl" />
+          <div className="relative z-10 h-full w-full animate-float rounded-full border-2 border-gold/40 p-2 gold-glow">
             <div className="relative h-full w-full overflow-hidden rounded-full border border-gold/20 bg-charcoal">
               <Image
                 src={personal.avatarUrl}
                 alt={personal.name}
                 fill
                 sizes="384px"
-                className="object-cover"
+                quality={95}
+                className="object-cover object-top"
                 priority
               />
             </div>

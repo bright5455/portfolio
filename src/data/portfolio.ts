@@ -12,12 +12,10 @@ export const personal = {
   email: "brightidio377@gmail.com",
   phone: "+234 816-973-5455",
   location: "Uyo, Akwa Ibom State, Nigeria",
-  // TODO: replace with your real profile URLs
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  github: "https://github.com/bright5455",
+  linkedin: "https://www.linkedin.com/in/anwanga-abasi-idio-945037236",
   resumeUrl: "/resume.pdf",
-  // TODO: replace with "/images/profile.jpg" after adding your photo to /public/images/
-  avatarUrl: "/images/avatar-placeholder.svg",
+  avatarUrl: "/images/profile.jpg",
   available: true,
 };
 
@@ -140,11 +138,19 @@ export const experience = [
 
 export const projects = [
   {
+    title: "GreenBounty",
+    description:
+      "Backend logic supporting user interactions, data synchronization between modules, and reliable API communication with frontend systems.",
+    tech: ["Node.js", "Express", "MongoDB"],
+    github: "https://github.com/bright5455",
+    live: "https://greenbounty.app",
+  },
+  {
     title: "File Management System",
     description:
       "A secure file management backend with upload functionality, file validation, Cloudinary integration, structured folder logic, metadata tracking, and admin/user-level permissions.",
     tech: ["NestJS", "TypeScript", "Cloudinary", "MongoDB"],
-    github: "#",
+    github: "https://github.com/bright5455",
     live: "#",
   },
   {
@@ -152,7 +158,7 @@ export const projects = [
     description:
       "A full authentication and authorization system with registration, login, email verification, password reset, role management, and an admin activity-tracking dashboard.",
     tech: ["NestJS", "JWT", "PostgreSQL", "RBAC"],
-    github: "#",
+    github: "https://github.com/bright5455",
     live: "#",
   },
   {
@@ -160,7 +166,7 @@ export const projects = [
     description:
       "Product catalog, inventory tracking, shopping cart, secure checkout, order processing and transaction history, with payment validation and API performance tuning for high traffic.",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
-    github: "#",
+    github: "https://github.com/bright5455",
     live: "#",
   },
   {
@@ -168,15 +174,7 @@ export const projects = [
     description:
       "Backend modules for complex business logic, CRUD operations, relational data modeling, and admin reporting, built with clean architecture and optimized queries.",
     tech: ["NestJS", "TypeScript", "MySQL"],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "GreenBounty",
-    description:
-      "Backend logic supporting user interactions, data synchronization between modules, and reliable API communication with frontend systems.",
-    tech: ["Node.js", "Express", "MongoDB"],
-    github: "#",
+    github: "https://github.com/bright5455",
     live: "#",
   },
 ];

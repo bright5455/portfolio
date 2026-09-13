@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { personal } from "@/data/portfolio";
 
@@ -25,7 +25,7 @@ const contactInfo = [
 ];
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const {
     register,
     handleSubmit,
@@ -33,14 +33,23 @@ export default function Contact() {
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit = (data: FormValues) => {
-    const body = `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`;
-    window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent(
-      data.subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-    reset();
-    setTimeout(() => setSent(false), 4000);
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      reset();
+    } catch {
+      setStatus("error");
+    } finally {
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -138,10 +147,16 @@ export default function Contact() {
               disabled={isSubmitting}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold-light px-7 py-3.5 text-sm font-semibold text-black transition-transform hover:scale-[1.02] disabled:opacity-60"
             >
-              {sent ? (
+              {status === "sent" ? (
                 <>
-                  <CheckCircle2 size={18} /> Opening your email client...
+                  <CheckCircle2 size={18} /> Message Sent!
                 </>
+              ) : status === "error" ? (
+                <>
+                  <AlertCircle size={18} /> Failed — try again
+                </>
+              ) : isSubmitting ? (
+                "Sending..."
               ) : (
                 <>
                   <Send size={16} /> Send Message

@@ -28,13 +28,6 @@ export const about = {
   ],
 };
 
-export const stats = [
-  { label: "Projects Completed", value: 8, suffix: "+" },
-  { label: "Technologies Used", value: 15, suffix: "+" },
-  { label: "Backend APIs Built", value: 12, suffix: "+" },
-  { label: "Years of Experience", value: 3, suffix: "+" },
-];
-
 export const skills = [
   {
     category: "Backend",
@@ -123,7 +116,7 @@ export const experience = [
   {
     company: "Start Innovation Hub",
     location: "Remote",
-    role: "Backend Engineer",
+    role: "Backend Engineer (Part-time, Remote)",
     period: "January 2023 — December 2024",
     points: [
       "Built scalable server-side applications using Node.js, TypeScript, NestJS, and Express.js for production environments.",
@@ -142,7 +135,6 @@ export const projects = [
     description:
       "Backend logic supporting user interactions, data synchronization between modules, and reliable API communication with frontend systems.",
     tech: ["Node.js", "Express", "MongoDB"],
-    github: "https://github.com/bright5455",
     live: "https://greenbounty.app",
   },
   {
@@ -150,29 +142,36 @@ export const projects = [
     description:
       "A secure file management backend with upload functionality, file validation, Cloudinary integration, structured folder logic, metadata tracking, and admin/user-level permissions.",
     tech: ["NestJS", "TypeScript", "Cloudinary", "MongoDB"],
-    github: "https://github.com/bright5455",
   },
   {
     title: "User Management API",
     description:
       "A full authentication and authorization system with registration, login, email verification, password reset, role management, and an admin activity-tracking dashboard.",
     tech: ["NestJS", "JWT", "PostgreSQL", "RBAC"],
-    github: "https://github.com/bright5455",
   },
   {
     title: "E-commerce Application",
     description:
       "Product catalog, inventory tracking, shopping cart, secure checkout, order processing and transaction history, with payment validation and API performance tuning for high traffic.",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
-    github: "https://github.com/bright5455",
   },
   {
     title: "Business Management System",
     description:
       "Backend modules for complex business logic, CRUD operations, relational data modeling, and admin reporting, built with clean architecture and optimized queries.",
     tech: ["NestJS", "TypeScript", "MySQL"],
-    github: "https://github.com/bright5455",
   },
+];
+
+export const stats = [
+  { label: "Projects Completed", value: projects.length, suffix: "+" },
+  {
+    label: "Technologies Used",
+    value: new Set(skills.flatMap((s) => s.items)).size,
+    suffix: "+",
+  },
+  { label: "Backend APIs Built", value: projects.length, suffix: "+" },
+  { label: "Years of Experience", value: 3, suffix: "+" },
 ];
 
 export const certificates = [

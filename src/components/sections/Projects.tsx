@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Folder } from "lucide-react";
-import { FaGithub } from "react-icons/fa6";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { projects } from "@/data/portfolio";
 
@@ -44,17 +43,8 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-4 border-t border-gold/10 pt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-gray transition-colors hover:text-gold"
-                >
-                  <FaGithub size={16} />
-                  Code
-                </a>
-                {project.live && (
+              {project.live && (
+                <div className="flex items-center gap-4 border-t border-gold/10 pt-4">
                   <a
                     href={project.live}
                     target="_blank"
@@ -64,8 +54,8 @@ export default function Projects() {
                     <ExternalLink size={16} />
                     Live
                   </a>
-                )}
-              </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

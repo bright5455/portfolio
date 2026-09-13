@@ -170,7 +170,7 @@ export const stats = [
     value: new Set(skills.flatMap((s) => s.items)).size,
     suffix: "+",
   },
-  { label: "Backend APIs Built", value: projects.length, suffix: "+" },
+  { label: "Production-Ready Systems", value: projects.length, suffix: "+" },
   { label: "Years of Experience", value: 3, suffix: "+" },
 ];
 

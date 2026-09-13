@@ -18,12 +18,13 @@ export default function OpenSource() {
       <div className="section-container">
         <SectionHeading eyebrow="Open Source" title="Community & Contributions" />
 
-        <div className="mt-16 grid items-center gap-10 lg:grid-cols-2">
+        <div className="mt-16 flex justify-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
+            className="max-w-xl text-center"
           >
             <p className="mb-6 leading-relaxed text-gray">
               I enjoy contributing to open-source projects, collaborating with
@@ -34,7 +35,7 @@ export default function OpenSource() {
 
             <div className="space-y-4">
               {highlights.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-3">
+                <div key={label} className="flex items-center justify-center gap-3">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 text-gold">
                     <Icon size={16} />
                   </span>
@@ -52,24 +53,6 @@ export default function OpenSource() {
               <FaGithub size={18} />
               View GitHub Profile
             </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="gradient-border glass overflow-hidden rounded-2xl p-4"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`https://ghchart.rshah.io/D4AF37/${personal.github.split("/").pop()}`}
-              alt="GitHub contribution graph"
-              className="w-full rounded-lg"
-            />
-            <p className="mt-3 text-center text-xs text-gray">
-              Live contribution graph — updates automatically from GitHub
-            </p>
           </motion.div>
         </div>
       </div>

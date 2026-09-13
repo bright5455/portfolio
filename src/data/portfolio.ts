@@ -151,7 +151,6 @@ export const projects = [
       "A secure file management backend with upload functionality, file validation, Cloudinary integration, structured folder logic, metadata tracking, and admin/user-level permissions.",
     tech: ["NestJS", "TypeScript", "Cloudinary", "MongoDB"],
     github: "https://github.com/bright5455",
-    live: "#",
   },
   {
     title: "User Management API",
@@ -159,7 +158,6 @@ export const projects = [
       "A full authentication and authorization system with registration, login, email verification, password reset, role management, and an admin activity-tracking dashboard.",
     tech: ["NestJS", "JWT", "PostgreSQL", "RBAC"],
     github: "https://github.com/bright5455",
-    live: "#",
   },
   {
     title: "E-commerce Application",
@@ -167,7 +165,6 @@ export const projects = [
       "Product catalog, inventory tracking, shopping cart, secure checkout, order processing and transaction history, with payment validation and API performance tuning for high traffic.",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
     github: "https://github.com/bright5455",
-    live: "#",
   },
   {
     title: "Business Management System",
@@ -175,7 +172,6 @@ export const projects = [
       "Backend modules for complex business logic, CRUD operations, relational data modeling, and admin reporting, built with clean architecture and optimized queries.",
     tech: ["NestJS", "TypeScript", "MySQL"],
     github: "https://github.com/bright5455",
-    live: "#",
   },
 ];
 

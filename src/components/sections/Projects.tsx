@@ -54,15 +54,17 @@ export default function Projects() {
                   <FaGithub size={16} />
                   Code
                 </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-gray transition-colors hover:text-gold"
-                >
-                  <ExternalLink size={16} />
-                  Live
-                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray transition-colors hover:text-gold"
+                  >
+                    <ExternalLink size={16} />
+                    Live
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

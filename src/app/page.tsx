@@ -8,7 +8,6 @@ import OpenSource from "@/components/sections/OpenSource";
 import Services from "@/components/sections/Services";
 import Certificates from "@/components/sections/Certificates";
 import Blog from "@/components/sections/Blog";
-import Testimonials from "@/components/sections/Testimonials";
 import Resume from "@/components/sections/Resume";
 import Contact from "@/components/sections/Contact";
 
@@ -25,7 +24,6 @@ export default function Home() {
       <Services />
       <Certificates />
       <Blog />
-      <Testimonials />
       <Resume />
       <Contact />
     </>
